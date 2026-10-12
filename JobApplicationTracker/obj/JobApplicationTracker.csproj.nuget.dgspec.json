@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/JobApplicationTracker.csproj": {}
+    "/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/JobApplicationTracker.csproj": {}
   },
   "projects": {
-    "/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/JobApplicationTracker.csproj": {
+    "/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/JobApplicationTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/JobApplicationTracker.csproj",
+        "projectUniqueName": "/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/JobApplicationTracker.csproj",
         "projectName": "JobApplicationTracker",
-        "projectPath": "/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/JobApplicationTracker.csproj",
+        "projectPath": "/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/JobApplicationTracker.csproj",
         "packagesPath": "/Users/alperkarakoc/.nuget/packages/",
-        "outputPath": "/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/",
+        "outputPath": "/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/alperkarakoc/.nuget/NuGet/NuGet.Config"
