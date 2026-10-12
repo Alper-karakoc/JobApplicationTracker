@@ -1,0 +1,15 @@
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/bin/Debug/net10.0/JobApplicationTracker
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/bin/Debug/net10.0/JobApplicationTracker.deps.json
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/bin/Debug/net10.0/JobApplicationTracker.runtimeconfig.json
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/bin/Debug/net10.0/JobApplicationTracker.dll
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/bin/Debug/net10.0/JobApplicationTracker.pdb
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/Debug/net10.0/JobApplicationTracker.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/Debug/net10.0/JobApplicationTracker.AssemblyInfoInputs.cache
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/Debug/net10.0/JobApplicationTracker.AssemblyInfo.cs
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/Debug/net10.0/JobApplicationTracker.csproj.CoreCompileInputs.cache
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/Debug/net10.0/JobApplicationTracker.sourcelink.json
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/Debug/net10.0/JobApplicationTracker.dll
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/Debug/net10.0/refint/JobApplicationTracker.dll
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/Debug/net10.0/JobApplicationTracker.pdb
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/Debug/net10.0/JobApplicationTracker.genruntimeconfig.cache
+/Users/alperkarakoc/SKOLA/inlämningar /JobApplicationTracker/JobApplicationTracker/obj/Debug/net10.0/ref/JobApplicationTracker.dll
