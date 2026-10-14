@@ -1,4 +1,6 @@
 //Ska hantera alla jobbansökningar och deras status.
+using Microsoft.Win32.SafeHandles;
+
 public class JobManager
 {
     public List<JobApplication> Applications { get; private set; } = new List<JobApplication>(); // List to store all job applications
@@ -19,7 +21,7 @@ public class JobManager
 
         for (int i = 0; i < Applications.Count; i++)
         {
-            Console.WriteLine($"Ansökan {i + 1}: {Applications[i].GetSummary()}");
+            WriteColored($"{i + 1}. {Applications[i].GetSummary()}", Applications[i].Status);
         }
 
     }
@@ -118,15 +120,32 @@ public class JobManager
         if (overdue.Count == 0)
         {
             
-            Console.WriteLine("Inga ansökningar utan svar som är äldre än {days} dagar.");
+            Console.WriteLine($"Inga ansökningar utan svar som är äldre än {days} dagar.");
             return;
         }
 
         foreach (var app in overdue)
         {
-          Console.WriteLine($"{app.GetSummary()} ({app.GetDaysSinceApplied()} dagar sedan)");
+          WriteColored($"{app.GetSummary()} ({app.GetDaysSinceApplied()} dagar sedan)", app.Status);
         }
 
     }
+
+    private static void WriteColored(string text, Status status)
+    {
+        Console.ForegroundColor = status switch
+        {
+            Status.Rejected => ConsoleColor.Red,
+            Status.Interviewing => ConsoleColor.Yellow,
+            _ => ConsoleColor.Gray //standard färg
+        };
+
+        Console.WriteLine(text);
+        Console.ResetColor(); //återställ standardfärg
+
+
+    }
+
+
 
 }
