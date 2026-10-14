@@ -1,4 +1,4 @@
-﻿// using System.Linq;
+﻿using System.Linq;
 
 // var manager = new JobManager();
 // manager .AddJob(new JobApplication ("Company A", "Software Engineer", DateTime.Now.AddDays(-10), 60000));
@@ -40,7 +40,7 @@ while (running)
             break;
         case "4":
             Console.WriteLine();
-            manager.ShowSortedByDate();
+            ShowSortedByDate();
             break;
         case "5":
             Console.WriteLine();
@@ -157,12 +157,51 @@ void FilterByStatus()
     }
 
     Console.WriteLine();
-    manager.ShowByStatus((Status)(choice - 1));
+    Status selectedStatus = (Status)(choice - 1);
+    bool found = false;
+
+    foreach (var application in manager.Applications)
+    {
+        if (application.Status == selectedStatus)
+        {
+            Console.WriteLine(application);
+            found = true;
+        }
+    }
+
+    if (!found)
+        Console.WriteLine("Inga ansökningar hittades med den statusen.");
 }
 
+void ShowSortedByDate()
+{
+    if (manager.Applications.Count == 0)
+    {
+        Console.WriteLine("Det finns inga ansökningar att visa.");
+        return;
+    }
 
+    var sortedApplications = manager.Applications
+        .OrderBy(application =>
+        {
+            foreach (var propertyName in new[] { "Date", "ApplicationDate", "AppliedDate", "DateApplied", "SubmittedDate" })
+            {
+                var property = application.GetType().GetProperty(propertyName);
+                if (property != null && property.PropertyType == typeof(DateTime))
+                {
+                    return (DateTime)property.GetValue(application)!;
+                }
+            }
 
+            return DateTime.MinValue;
+        })
+        .ToList();
 
+    foreach (var application in sortedApplications)
+    {
+        Console.WriteLine(application);
+    }
+}
 
 string ReadText(string prompt)
 {

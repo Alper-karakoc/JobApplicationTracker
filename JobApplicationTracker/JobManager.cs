@@ -58,4 +58,75 @@ public class JobManager
         return true; // Job application removed successfully
     }
 
+
+    public void ShowByStatus(Status status)
+    {
+        var filtered = Applications.Where(app => app.Status == status).ToList();
+        if (filtered.Count == 0)
+        {
+            Console.WriteLine($"Ingen ansökan med status {status}.");
+            return;
+        }
+
+        foreach (var app in filtered)
+        {
+            Console.WriteLine(app.GetSummary());
+        }
+    }
+
+    //visar statistik över ansökningarna, t.ex. antal ansökningar, antal per status, etc.
+    public void ShowStatistics()
+    {
+        Console.WriteLine($"Total ansökningar: {Applications.Count}");
+
+        //antal per status
+        Console.WriteLine("Antal per status:");
+        foreach (Status status in Enum.GetValues<Status>())
+        {
+            int count = Applications.Count(app => app.Status == status);
+            Console.WriteLine($" {status}: {count}");
+        }
+
+        //genomsnittlig svarstid
+        var answered = Applications.Where(a => a.ResponseDate.HasValue).ToList();
+        if (answered.Count > 0)
+        {
+            double averageDays = answered.Average(a => (a.ResponseDate!.Value - a.ApplicationDate).TotalDays);
+            Console.WriteLine($"Genomsnittlig svarstid: {averageDays:F2} dagar");
+        }
+        else
+        {
+            Console.WriteLine("Genomsnittlig svarstid: inga svar än.");
+        }
+
+        if (Applications.Count > 0)
+        {
+            double averageSalary = Applications.Average(a => a.SalaryExpectation);
+            Console.WriteLine($"Genomsnittlig löneförväntning: {averageSalary:F0} kr");
+        }
+       
+    }
+
+    //Extrafilter: ansökningar utan svar som är äldre än ett visst antal dagar.
+    public void ShowNoResponseOlderThan(int days)
+    {
+        var overdue = Applications
+            .Where(a => a.ResponseDate == null && a.GetDaysSinceApplied() > days)
+            .OrderByDescending(a => a.GetDaysSinceApplied())
+            .ToList();
+
+        if (overdue.Count == 0)
+        {
+            
+            Console.WriteLine("Inga ansökningar utan svar som är äldre än {days} dagar.");
+            return;
+        }
+
+        foreach (var app in overdue)
+        {
+          Console.WriteLine($"{app.GetSummary()} ({app.GetDaysSinceApplied()} dagar sedan)");
+        }
+
+    }
+
 }
