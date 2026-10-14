@@ -109,7 +109,7 @@ public class JobManager
     }
 
     //Extrafilter: ansökningar utan svar som är äldre än ett visst antal dagar.
-    public void ShowNoApplicationResponseOlderThen(int days)
+    public void ShowNoResponseOlderThan(int days)
     {
         var overdue = Applications
             .Where(a => a.ResponseDate == null && a.GetDaysSinceApplied() > days)

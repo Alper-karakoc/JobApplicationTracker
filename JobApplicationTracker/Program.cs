@@ -1,4 +1,6 @@
-﻿// var manager = new JobManager();
+﻿// using System.Linq;
+
+// var manager = new JobManager();
 // manager .AddJob(new JobApplication ("Company A", "Software Engineer", DateTime.Now.AddDays(-10), 60000));
 // manager .AddJob(new JobApplication ("Company B", "Data Analyst", DateTime.Now.AddDays(-5), 55000));
 
@@ -34,19 +36,25 @@ while (running)
             manager.ShowAll();
             break;
         case "3":
-            Console.WriteLine("Filtrering kommer i ett senare steg (LINQ).");
+            FilterByStatus();
             break;
         case "4":
-            Console.WriteLine("Sortering kommer i ett senare steg (LINQ).");
+            Console.WriteLine();
+            manager.ShowSortedByDate();
             break;
         case "5":
-            Console.WriteLine("Statistik kommer i ett senare steg (LINQ).");
+            Console.WriteLine();
+            manager.ShowStatistics();
             break;
         case "6":
             UpdateApplicationStatus();
             break;
         case "7":
             RemoveApplication();
+            break;
+        case "8":
+            Console.WriteLine();
+            manager.ShowNoResponseOlderThan(14);
             break;
         case "0":
             Console.WriteLine("Programmet avslutas. Hejdå!");
@@ -71,6 +79,7 @@ void ShowMenu()
     Console.WriteLine("5. Visa statistik");
     Console.WriteLine("6. Uppdatera status på en ansökan");
     Console.WriteLine("7. Ta bort en ansökan");
+     Console.WriteLine("8. Visa ansökningar utan svar äldre än 14 dagar");   // NY RAD
     Console.WriteLine("0. Avsluta");
     Console.Write("Välj: ");
 }
@@ -133,6 +142,25 @@ void RemoveApplication()
     else
         Console.WriteLine("Det finns ingen ansökan med det numret.");
 }
+
+
+
+void FilterByStatus()
+{
+    Console.WriteLine("1. Applied  2. Interview  3. Offer  4. Rejected");
+    int choice = ReadInt("Välj status att filtrera på: ");
+
+    if (choice < 1 || choice > 4)
+    {
+        Console.WriteLine("Ogiltig status.");
+        return;
+    }
+
+    Console.WriteLine();
+    manager.ShowByStatus((Status)(choice - 1));
+}
+
+
 
 
 
